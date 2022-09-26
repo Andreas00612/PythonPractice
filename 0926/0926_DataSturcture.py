@@ -31,8 +31,9 @@ class Polygon():
 
 class Circle(Polygon):
     def __init__(self, radius):
+        super().__init__(Circle)
         self.radius = radius
-
+        self.num_sides = 0
     def area(self):
         return (self.radius ** 2) * math.pi
 
@@ -42,8 +43,10 @@ class Circle(Polygon):
 
 class Rectangle(Polygon):
     def __init__(self, length, breadth):
+        super().__init__(Rectangle)
         self.length = length
         self.breadth = breadth
+        self.num_sides = 4
 
     def area(self):
         return self.length * self.breadth
@@ -60,7 +63,8 @@ def Exercise_3():
     rec = Rectangle(6, 6)
     print(rec.area())
     print(rec.perimeter())
-    
+
+
 
 def Exercise_4():
     a = [1, 3, 5]
