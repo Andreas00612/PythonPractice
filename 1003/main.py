@@ -29,3 +29,17 @@ for text in string:
             str_count_list[num]=str_count_list[num]+1
 for i in zip(str_list,str_count_list):
     print(i[0],i[1])
+###########100302_<sol2>#######################
+txt = input()
+txt_upper = txt.upper()
+
+count = {}
+for i in txt_upper:
+  if i.isalpha():
+    if not i in count:
+      count[i]=1
+    else:
+      count[i]=count[i]+1
+
+for k, v in count.items():
+    print(str(k), int(v))
