@@ -1,4 +1,4 @@
-########101001###############
+########101001<SOL1>###############
 
 s = input()
 num = [f'{i}' for i in range(0, 10)]
@@ -7,6 +7,15 @@ while s >10:
     s = str(s)
     s = sum([int(y) for y in str(sum([int(x) for x in s if x in num]))])
 print(s)
+#############101001<sol2>###########
+
+input = input()
+sum=int(input[0])
+for i in range(1,len(input)):
+    sum +=int(input[i])
+    if sum>10:
+        sum = sum%10+1
+print(sum)
 
 ###########101002###########
 
