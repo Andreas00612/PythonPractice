@@ -24,23 +24,31 @@ class DoubleLinkedList:
             item.prev = self.tail
             self.tail = item
         return
-    def traverse(self):
-        current  = self.head
-        while current.data % 2 != 0 :
+    def no_reverse(self, current):
+        while current:
+            print(current.data, " ")
             current = current.next
 
-        out = current.prev
-        current.prev = None
-
-        while out :
-            print(out.data)
-            out = out.prev
-
-        out  = self.tail
-        print(out.data)
-        while out.prev:
-            out = out.prev
-            print(out.data)
+    def traverse(self):
+        current = self.head
+        while current:
+            temp = current
+            while current.data % 10 != 0:
+                current = current.next
+                if current.next is None and current.data % 10 != 0:
+                    self.no_reverse(temp)
+                    return
+            out = current.prev
+            current.prev = None
+            while out:
+                print(out.data)
+                out = out.prev
+            print(current.data, " ")
+            if current.next:
+                current = current.next
+                current.prev = None
+            else:
+                return
 #loading input file
 with open('input.pkl','rb') as inp:
     linkedlist = pickle.load(inp)
