@@ -1,5 +1,4 @@
-
-#####102403#########
+###102403####
 class ListNode:
     def __init__(self, data):
         self.data = data
@@ -24,24 +23,22 @@ class DoubleLinkedList:
             item.prev = self.tail
             self.tail = item
         return
-    def no_reverse(self, current):
+    def reverse(self,current):
         while current:
-            print(current.data, " ")
-            current = current.next
-
+            print(current.data," ")
+            current = current.prev
     def traverse(self):
         current = self.head
         while current:
-            temp = current
-            while current.data % 10 != 0:
+            while current.data % 2 != 0:
                 current = current.next
-                if current.next is None and current.data % 10 != 0:
-                    self.no_reverse(temp)
+                if current.next is None and current.data % 2 != 0:
+                    self.reverse(current)
                     return
             out = current.prev
             current.prev = None
             while out:
-                print(out.data)
+                print(out.data," ")
                 out = out.prev
             print(current.data, " ")
             if current.next:
@@ -49,7 +46,7 @@ class DoubleLinkedList:
                 current.prev = None
             else:
                 return
-#loading input file
+
 with open('input.pkl','rb') as inp:
     linkedlist = pickle.load(inp)
     linkedlist.traverse()
