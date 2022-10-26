@@ -25,7 +25,7 @@ class DoubleLinkedList:
         return
     def reverse(self,current):
         while current:
-            print(current.data," ")
+            print(current.data)
             current = current.prev
     def traverse(self):
         current = self.head
@@ -38,9 +38,9 @@ class DoubleLinkedList:
             out = current.prev
             current.prev = None
             while out:
-                print(out.data," ")
+                print(out.data)
                 out = out.prev
-            print(current.data, " ")
+            print(current.data)
             if current.next:
                 current = current.next
                 current.prev = None
@@ -101,10 +101,7 @@ class DoubleLinkedList:
                         ans.append(current.data)
                         current = current.next
         for i in range(len(ans)):
-            if ans[0] != 3 and i < 2:
-                print(ans[i]," ")
-            else:
-                print(ans[i])
+            print(ans[i])
 
 with open('input.pkl','rb') as inp:
     linkedlist = pickle.load(inp)
