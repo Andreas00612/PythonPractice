@@ -19,7 +19,7 @@ def minDiff(root):
     inOrderTraversal(root)
     for i in range(0,len(ans)-1):
         diff.append(ans[i+1]-ans[i])
-    print(min(diff))
+
 
     #------------------------------------------------------------#
 #loading input file
