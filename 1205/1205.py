@@ -33,7 +33,7 @@ import math
 def heapCheck(Arr):
     if len(Arr) <= 1:
         return True
-    heaps = math.ceil((len(Arr) - 1) // 2 ) ## math.ceil 無條件進位
+    heaps = (len(Arr) - 2) // 2 + 1
     for i in range(heaps):
         if Arr[i] > Arr[2 * i + 1]:  ## 確認左節點符合
             return False
